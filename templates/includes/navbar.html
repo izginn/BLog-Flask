@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/">Izgin Sağlam</a>
+    <a class="navbar-brand" href="/">Izgin Sağlam</a> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,6 +13,18 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/dashboard">Kontrol Paneli</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Çıkış Yap</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Giriş Yap</a>
+        </li>
+        {% endif %}
         <li class="nav-item active">
           <a class="nav-link" href="/register">Kayıt Olun</a>
         </li>
